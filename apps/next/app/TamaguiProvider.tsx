@@ -13,39 +13,39 @@ import { createTamagui, TamaguiProvider as TamaguiProviderOG } from 'tamagui'
 import Tamagui from '../tamagui.config'
 
 const config = createTamagui({
-  ...configBase,
-  themeClassNameOnRoot: false,
+	...configBase,
+	themeClassNameOnRoot: false,
 })
 
 export type Conf = typeof config
 
 declare module 'tamagui' {
-  interface TamaguiCustomConfig extends Conf {}
+	interface TamaguiCustomConfig extends Conf {}
 }
 
 export const TamaguiProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useRootTheme()
+	const [theme, setTheme] = useRootTheme()
 
-  useServerInsertedHTML(() => {
-    // @ts-ignore
-    const rnwStyle = StyleSheet.getSheet()
-    return (
-      <>
-        <style dangerouslySetInnerHTML={{ __html: Tamagui.getCSS() }} />
-        <style dangerouslySetInnerHTML={{ __html: rnwStyle.textContent }} id={rnwStyle.id} />
-      </>
-    )
-  })
+	useServerInsertedHTML(() => {
+		// @ts-ignore
+		const rnwStyle = StyleSheet.getSheet()
+		return (
+			<>
+				<style dangerouslySetInnerHTML={{ __html: Tamagui.getCSS() }} />
+				<style dangerouslySetInnerHTML={{ __html: rnwStyle.textContent }} id={rnwStyle.id} />
+			</>
+		)
+	})
 
-  return (
-    <NextThemeProvider
-      onChangeTheme={(next) => {
-        setTheme(next as any)
-      }}
-    >
-      <TamaguiProviderOG config={config} themeClassNameOnRoot defaultTheme={theme}>
-        {children}
-      </TamaguiProviderOG>
-    </NextThemeProvider>
-  )
+	return (
+		<NextThemeProvider
+			onChangeTheme={(next) => {
+				setTheme(next as any)
+			}}
+		>
+			<TamaguiProviderOG config={config} themeClassNameOnRoot defaultTheme={theme}>
+				{children}
+			</TamaguiProviderOG>
+		</NextThemeProvider>
+	)
 }
