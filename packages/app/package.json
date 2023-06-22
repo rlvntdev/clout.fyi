@@ -8,6 +8,8 @@
   ],
   "dependencies": {
     "@my/ui": "*",
+    "@react-sigma/core": "^3.4.0",
+    "@react-sigma/layout-forceatlas2": "^3.4.0",
     "@tamagui/animations-react-native": "latest",
     "@tamagui/colors": "latest",
     "@tamagui/font-inter": "latest",
@@ -15,9 +17,16 @@
     "@tamagui/shorthands": "latest",
     "@tamagui/themes": "latest",
     "burnt": "^0.10.0",
+    "date-fns": "^2.29.3",
     "expo-constants": "^14.2.1",
     "expo-linking": "^4.0.1",
+    "graphology": "^0.25.1",
+    "graphology-layout": "^0.6.1",
+    "graphology-layout-forceatlas2": "^0.10.1",
+    "graphology-types": "^0.24.7",
     "react-native-safe-area-context": "^4.5.2",
+    "react-sigma": "^1.2.35",
+    "sigma": "^3.0.0-alpha3",
     "solito": "^3.0.0"
   },
   "devDependencies": {

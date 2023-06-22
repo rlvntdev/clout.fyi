@@ -7,9 +7,11 @@
     "build": "cd ../.. && yarn build && cd apps/next && TAMAGUI_TARGET=web next build",
     "start": "next start",
     "serve": "NODE_ENV=production next start --port 8151",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "yarn setup-skia-web"
   },
   "dependencies": {
+    "@shopify/react-native-skia": "^0.1.195",
     "@tamagui/next-theme": "latest",
     "app": "*",
     "next": "^13.2.4",
@@ -17,6 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.71.4",
+    "react-native-reanimated": "^3.3.0",
     "react-native-web": "^0.18.12",
     "react-native-web-lite": "latest",
     "vercel": "latest"
