@@ -20,8 +20,8 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
 	return (
 		<>
 			<Head>
-				<title>Tamagui Example App</title>
-				<meta name="description" content="Tamagui, Solito, Expo & Next.js" />
+				<title>clout.fyi</title>
+				<meta name="description" content="get acclouted" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<ThemeProvider>
